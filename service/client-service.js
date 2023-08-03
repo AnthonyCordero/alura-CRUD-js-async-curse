@@ -1,6 +1,3 @@
-const http = new XMLHttpRequest();
-
-
 // Abre http (metodo,url)
 
 // CRUD     - Metodos http
@@ -9,12 +6,11 @@ const http = new XMLHttpRequest();
 // Uupdate  - PUT/PATCH
 // Ddelete  - DELETE
 
+// Fetch API
 
-http.open('GET', 'http://localhost:3000/perfil');
+const listaClientes = () => fetch('http://localhost:3000/perfil').then((respuesta) => respuesta.json());
 
-http.send();
-http.onload = () => {
-    const data = http.response;
-    console.log(data);
-    console.log(data);
+
+export const clientServices = {
+    listaClientes,
 }
